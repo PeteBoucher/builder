@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { navigateTo } from 'decentraland-dapps/dist/modules/location/actions'
+import { openModal } from 'decentraland-dapps/dist/modules/modal/actions'
 
 import { locations } from 'routing/locations'
 import { RootState } from 'modules/common/types'
@@ -14,6 +15,7 @@ const mapState = (state: RootState): MapStateProps => ({
 })
 
 const mapDispatch = (dispatch: MapDispatch): MapDispatchProps => ({
+  onOpenModal: (name: string) => dispatch(openModal(name)),
   onProjectClick: (projectId: string) => dispatch(navigateTo(locations.editor(projectId))),
   onCreateProject: (template: Template) =>
     dispatch(

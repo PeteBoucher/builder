@@ -17,7 +17,8 @@ export default class HomePage extends React.PureComponent<Props> {
   }
 
   handleProjectClick = (project: Project) => {
-    this.props.onProjectClick(project.id)
+    // this.props.onProjectClick(project.id)
+    this.props.onOpenModal('ShortcutsModal')
   }
 
   handleTemplateClick = (template: Template) => {
